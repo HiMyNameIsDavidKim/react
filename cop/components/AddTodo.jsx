@@ -9,11 +9,6 @@ const AddTodo = () => {
     const onChange = e => setValue(e.target.value)
     const onSubmit = e => {
         e.preventDefault()
-        if(!value.trim()) {
-            alert('입력창이 비었습니다.')
-        }else{
-            alert(`입력값: ${value}`)
-        }
         dispatch(addTodo({text: value}))
         setValue('')
     }
