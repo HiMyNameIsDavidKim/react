@@ -12,10 +12,17 @@ const Login = () => {
     }
     const onClick = e => {
         e.preventDefault()
-        const loginRequest = {username, password}
-        alert(`사용자 이름: ${JSON.stringify(loginRequest)}`)
+        const loginRequest = {email, password}
+        alert(`${JSON.stringify(loginRequest)}`)
         loginApi(loginRequest)
-
+        .then((response)=>{
+            console.log(`response is ${response.config.data}`)
+            localStorage.setItem('token', JSON.stringify(response.config.data))
+        })
+        .catch((err)=>{
+            console.log(err)
+            alert('이메일, 닉네임 그리고 비밀번호 다시 입력')
+        })
     }
 
     return (
