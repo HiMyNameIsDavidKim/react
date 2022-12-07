@@ -1,17 +1,21 @@
 import { useState } from "react"
-import { connect } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addTodo } from '../reducers/todo.reducer'
 
-const mapDispatch = { addTodo }
+const AddTodo = () => {
 
-const AddTodo = ({ addTodo }) => {
-    const [todo, setTodo] = useState('')
-    const onChange = e => setTodo(e.target.value)
+    const [value, setValue] = useState('')
+    const dispatch = useDispatch()
+    const onChange = e => setValue(e.target.value)
     const onSubmit = e => {
         e.preventDefault()
-        if(!todo.trim()) return
-        addTodo(todo)
-        setTodo('')
+        if(!value.trim()) {
+            alert('입력창이 비었습니다.')
+        }else{
+            alert(`입력값: ${value}`)
+        }
+        dispatch(addTodo({text: value}))
+        setValue('')
     }
 
     return (<>
@@ -23,14 +27,11 @@ const AddTodo = ({ addTodo }) => {
             id="todo" 
             name="todo"
             placeholder="할일 입력"
-            value={todo} 
+            value={value} 
             onChange={onChange} /><br/><br/>
         
     </form> 
     <p>할 일을 등록하시면, 스케줄 목록에 출력됩니다.</p>
     </>)
 }
-export default connect(
-    null,
-    mapDispatch
-)(AddTodo)
+export default AddTodo

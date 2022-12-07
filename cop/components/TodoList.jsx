@@ -1,26 +1,15 @@
 import 'cop/styles/TodoList.css'
+import { useSelector } from 'react-redux'
 import { Todo } from 'cop'
-import PropTypes from 'prop-types'
 
-const TodoList = ({ todos, toggleTodo }) => {
+const TodoList = () => {
+    const todos = useSelector((state) => state.todos)
     return (<>
     <ul>
         {todos.map( todo => (
-            <Todo key={todo.id} {...todo} onClick={ () => toggleTodo(todo.id)}/>
+            <Todo key={todo.id} id={todo.id} text={todo.text} />
         ))} 
     </ul>
     </>)
 }
-
-TodoList.propTypes = {
-    todos : PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            completed: PropTypes.bool.isRequired,
-            text: PropTypes.string.isRequired
-        }).isRequired
-    ).isRequired,
-    toggleTodo: PropTypes.func.isRequired
-}
-
 export default TodoList

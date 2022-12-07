@@ -1,4 +1,3 @@
-
 import '../styles/SignUp.css'
 
 const UserEdit = () => (

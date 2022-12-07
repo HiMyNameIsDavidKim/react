@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom"
 import {Navigation, Counter, Footer} from "cmm"
 import {Schedule} from "cop"
-import { Login, SignUp } from "uat"
+import {LoginForm} from "uat"
 const Home = () => {
     return (<>
     <table style={{ width: "1200px", height: "550px", margin: "0 auto", border: "1px solid black"}}>
@@ -18,8 +18,7 @@ const Home = () => {
             <Routes>
                 <Route path="/counter" element={<Counter/>}></Route>
                 <Route path="/todos" element={<Schedule/>}></Route>
-                <Route path="/signup" element={<SignUp/>}></Route>
-                <Route path="/login" element={<Login/>}></Route>
+                <Route path="/login" element={<LoginForm/>}></Route>
             </Routes>
             </td>
         </tr>
