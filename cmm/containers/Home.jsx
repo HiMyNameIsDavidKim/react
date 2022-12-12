@@ -1,15 +1,17 @@
 import { Route, Routes } from "react-router-dom"
-import {Navigation, Counter, Footer} from "cmm"
+import {Navigation2, Counter, Footer} from "cmm"
 import {Schedule} from "cop"
 import {LoginForm} from "uat"
-import dog from '../../images/dog.jpeg'
+import image from '../../images/fashion.png'
+
 const Home = () => {
+    const imageSize = {width: 700, height: 500}
     return (<>
     <table style={{ width: "1200px", height: "550px", margin: "0 auto", border: "1px solid black"}}>
         <thead>
             <tr columns="3" >
                 <td style={{ width: "100%", border: "1px solid black"}}>
-                    <Navigation/>
+                    <Navigation2/>
                 </td>
             </tr>
         </thead>
@@ -25,7 +27,7 @@ const Home = () => {
         </tr>
         <tr>
             <td>
-                <img src={dog}/>
+                <img src={image} style={imageSize}/>
             </td>
         </tr>
         <tr style={{ width: "100%", height: "20%", border: "1px solid black"}}>
