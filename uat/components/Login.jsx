@@ -16,12 +16,13 @@ const Login = () => {
         alert(`사용자 이름: ${JSON.stringify(request)}`)
         blogLogin(request)
         .then((res)=>{
+            alert(`Response is ${res.config.data}`)
             console.log(`Response is ${res.config.data}`)
             localStorage.setItem('token', JSON.stringify(res.config.data))
         })
         .catch((err)=>{
             console.log(err)
-            alert('아이디와 비밀번호를 다시')
+            alert('아이디와 비밀번호를 다시 입력하세요.')
         })
 
     }
