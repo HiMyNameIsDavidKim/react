@@ -14,7 +14,7 @@ const Iris = ()=> {
     const onClick = e =>{
         e.preventDefault()
         const request = {petal_width_cm, petal_length_cm, sepal_width_cm, sepal_length_cm}
-        alert(`iris info : ${JSON.stringify(request)}`)
+        alert(`Iris info : ${JSON.stringify(request)}`)
         irisapi(request)
         .then((res)=>{
             alert(`Response : ${res.data.result}`)
