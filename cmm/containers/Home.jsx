@@ -1,7 +1,8 @@
 import { Route, Routes } from "react-router-dom"
 import {Navigation2, Counter, Footer} from "cmm"
 import {Schedule} from "cop"
-import {LoginForm} from "uat"
+import {LoginForm, SignUp} from "uat"
+import {Iris} from "iris"
 import image from '../../images/fashion.png'
 
 const Home = () => {
@@ -21,7 +22,9 @@ const Home = () => {
             <Routes>
                 <Route path="/counter" element={<Counter/>}></Route>
                 <Route path="/todos" element={<Schedule/>}></Route>
+                <Route path="/signup" element={<SignUp/>}></Route>
                 <Route path="/login" element={<LoginForm/>}></Route>
+                <Route path="/iris" element={<Iris/>}></Route>
             </Routes>
             </td>
         </tr>

@@ -31,9 +31,7 @@ const Login = () => {
     <>
         EMAIL: <input type="text" name="email" onChange={onChange} /><br/>
         PASSWORD: <input type="text" name="password" onChange={onChange} /><br/>
-        <button onClick={onClick}> 로그인 </button>
-
-    
+        <button onClick={onClick}> 로그인 </button>    
     </>
 )}
 export default Login
