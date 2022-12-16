@@ -4,6 +4,7 @@ import {Schedule} from "cop"
 import {LoginForm, SignUp} from "uat"
 import {Iris} from "iris"
 import image from '../../images/fashion.png'
+import Fashion from "iris/components/Fashion"
 
 const Home = () => {
     const imageSize = {width: 700, height: 500}
@@ -25,6 +26,7 @@ const Home = () => {
                 <Route path="/signup" element={<SignUp/>}></Route>
                 <Route path="/login" element={<LoginForm/>}></Route>
                 <Route path="/iris" element={<Iris/>}></Route>
+                <Route path="/fashion" element={<Fashion/>}></Route>
             </Routes>
             </td>
         </tr>
