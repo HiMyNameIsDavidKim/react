@@ -11,7 +11,7 @@ const Fashion = () => {
     }
     const onGetClick = e => {
         e.preventDefault()
-        alert(`선택한 옷: ${JSON.stringify(id)}`)
+        alert(`사용자 이름: ${JSON.stringify(id)}`)
         getFashion(id)
         .then((res)=>{
             alert(`옷의 카테고리 : ${JSON.stringify(res.data.result)}`)
@@ -23,7 +23,7 @@ const Fashion = () => {
     }
     const onPostClick = e => {
         e.preventDefault()
-        alert(`선택한 옷: ${JSON.stringify(id)}`)
+        alert(`사용자 이름: ${JSON.stringify(id)}`)
         postFashion(id)
         .then((res)=>{
             alert(`옷의 카테고리 : ${JSON.stringify(res.data.result)}`)
