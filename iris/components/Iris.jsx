@@ -9,7 +9,6 @@ const Iris = ()=> {
         e.preventDefault()
         const {value, name} = e.target 
         setInputs({...inputs, [name]: value})
-
     }
     const onClick = e =>{
         e.preventDefault()
@@ -20,11 +19,13 @@ const Iris = ()=> {
     }
     return (
     <form method="post">
+        <h1>Iris classify</h1>
+        <p>Please input data of Iris.</p>
         petal_width_cm : <input id="aa" type="text" className="box" name="petal_width_cm" onChange={onChange} /><br/>
         petal_length_cm : <input type="text" className="box" name="petal_length_cm" onChange={onChange} /><br/>
         sepal_width_cm : <input type="text" className="box" name="sepal_width_cm" onChange={onChange} /><br/>
         sepal_length_cm : <input type="text" className="box" name="sepal_length_cm" onChange={onChange} />
-        <button onClick={onClick}> Do it </button>
+        <button onClick={onClick}> Class </button>
     </form>
     )
 }

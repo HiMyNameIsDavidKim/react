@@ -23,16 +23,16 @@ const Fashion = () => {
     }
     return(<>
     <form method="get">
-    <h1>FASHION GET방식</h1>
-    <p>카테고리를 알고 싶은 옷의 번호를 입력해주세요.</p>
-    <input type="text" className="box" placeholder="테스트할 옷 번호" name="id" onChange={onChange}/>
-    <button onClick={onGetClick}>옷의 카테고리 찾기</button>
+    <h1>FASHION GET</h1>
+    <p>Please input data that you want to know categories.</p>
+    <input type="text" className="box" placeholder="Clothes No." name="id" onChange={onChange}/>
+    <button onClick={onGetClick}>Find</button>
     </form>
     <form method="post">
-    <h1>FASHION POST방식</h1>
-    <p>카테고리를 알고 싶은 옷의 번호를 입력해주세요.</p>
-    <input type="text" className="box" placeholder="테스트할 옷 번호" name="id" onChange={onChange}/>
-    <button onClick={onPostClick}>옷의 카테고리 찾기</button>
+    <h1>FASHION POST</h1>
+    <p>Please input cloth's data that you want to know categories.</p>
+    <input type="text" className="box" placeholder="Clothes No." name="id" onChange={onChange}/>
+    <button onClick={onPostClick}>Find</button>
     </form>
     </>)
 }
