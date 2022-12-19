@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { irisapi } from "../api"
+import dlearnService from "../api"
 
 const Iris = ()=> {
     const [inputs, setInputs] = useState({})
@@ -14,28 +14,18 @@ const Iris = ()=> {
     const onClick = e =>{
         e.preventDefault()
         const request = {petal_width_cm, petal_length_cm, sepal_width_cm, sepal_length_cm}
-        alert(`Iris info : ${JSON.stringify(request)}`)
-        irisapi(request)
-        .then((res)=>{
-            alert(`Response : ${res.data.result}`)
-            console.log(`Response : ${res.data.result}`)
-            localStorage.setItem('token', JSON.stringify(res.data.result))
-        })
-        .catch((err)=>{
-            console.log(err)
-            alert('Please input again.')
-        })
+        dlearnService.iris(request)
+        let arr = document.getElementsByClassName('box')
+        for(let i=0; i<arr.length; i++) arr[i].value = ""
     }
-
     return (
-    <>
-        petal_width_cm: <input type="text" name="petal_width_cm" onChange={onChange} /><br/>
-        petal_length_cm: <input type="text" name="petal_length_cm" onChange={onChange} /><br/>
-        sepal_width_cm: <input type="text" name="sepal_width_cm" onChange={onChange} /><br/>
-        sepal_length_cm: <input type="text" name="sepal_length_cm" onChange={onChange} /><br/>
-        <button onClick={onClick}> Execute </button>
-    </>
+    <form method="post">
+        petal_width_cm : <input id="aa" type="text" className="box" name="petal_width_cm" onChange={onChange} /><br/>
+        petal_length_cm : <input type="text" className="box" name="petal_length_cm" onChange={onChange} /><br/>
+        sepal_width_cm : <input type="text" className="box" name="sepal_width_cm" onChange={onChange} /><br/>
+        sepal_length_cm : <input type="text" className="box" name="sepal_length_cm" onChange={onChange} />
+        <button onClick={onClick}> Do it </button>
+    </form>
     )
 }
-
 export default Iris
