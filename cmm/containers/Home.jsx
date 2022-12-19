@@ -34,7 +34,8 @@ const Home = () => {
         </tr>
         <tr>
             <td>
-                <img src={image} style={imageSize}/>
+                <> main image </>
+                {/* <img src={image} style={imageSize}/> */}
             </td>
         </tr>
         <tr style={{ width: "100%", height: "20%", border: "1px solid black"}}>

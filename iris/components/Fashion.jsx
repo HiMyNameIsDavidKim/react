@@ -23,14 +23,14 @@ const Fashion = () => {
     }
     return(<>
     <form method="get">
-    <h1>FASHION GET</h1>
-    <p>Please input data that you want to know categories.</p>
+    <h1>fashion MNIST (GET)</h1>
+    <p>Please input f-MNIST data that you want to know categories.</p>
     <input type="text" className="box" placeholder="Clothes No." name="id" onChange={onChange}/>
     <button onClick={onGetClick}>Find</button>
     </form>
     <form method="post">
-    <h1>FASHION POST</h1>
-    <p>Please input cloth's data that you want to know categories.</p>
+    <h1>fashion MNIST (POST)</h1>
+    <p>Please input f-MNIST data that you want to know categories.</p>
     <input type="text" className="box" placeholder="Clothes No." name="id" onChange={onChange}/>
     <button onClick={onPostClick}>Find</button>
     </form>

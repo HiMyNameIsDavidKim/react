@@ -18,7 +18,7 @@ const Number = () => {
     return(<>
     <form method="get">
     <h1>Number MNIST</h1>
-    <p>Please input data that you want to know categories.</p>
+    <p>Please input MNIST data that you want to know categories.</p>
     <input type="text" className="box" placeholder="MNIST No." name="id" onChange={onChange}/>
     <button onClick={onClick}>Find</button>
     </form>
