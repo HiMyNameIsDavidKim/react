@@ -27,6 +27,7 @@ const Navigation2 = () => {
         <Link to="/iris" style={{width:50, margin:10}}>Iris</Link>
         <Link to="/fashion" style={{width:50, margin:10}}>Fashion</Link>
         <Link to="/number" style={{width:50, margin:10}}>Number</Link>
+        <Link to="/crawler" style={{width:50, margin:10}}>Crawler</Link>
       </BottomNavigation>
     </Box>
   );

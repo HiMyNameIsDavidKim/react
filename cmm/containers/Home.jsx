@@ -6,6 +6,7 @@ import {Iris} from "iris"
 import image from '../../images/fashion.png'
 import Fashion from "iris/components/Fashion"
 import Number from "iris/components/Number"
+import NaverCrawler from "iris/components/NaverCrawler"
 
 const Home = () => {
     const imageSize = {width: 700, height: 500}
@@ -29,6 +30,7 @@ const Home = () => {
                 <Route path="/iris" element={<Iris/>}></Route>
                 <Route path="/fashion" element={<Fashion/>}></Route>
                 <Route path="/number" element={<Number/>}></Route>
+                <Route path="/crawler" element={<NaverCrawler/>}></Route>
             </Routes>
             </td>
         </tr>

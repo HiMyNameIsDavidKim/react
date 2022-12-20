@@ -1,7 +1,7 @@
 import axios from "axios";
 const server = `http://localhost:8000`
 const dlearnService = {
-    iris, getFashion, postFashion, number
+    iris, getFashion, postFashion, number, crawler
 }
 function handleResponse(response){ 
     return response.text()
@@ -61,6 +61,13 @@ async function number(id){
     .then(data => {
         alert('결과: '+JSON.stringify(data))
     })
-} 
+}
+async function crawler(id){
+    fetch(`${server}/shop/crawler?id=${id}`)
+    .then(handleResponse)
+    .then(data => {
+        alert('결과: '+JSON.stringify(data))
+    })
+}
 
 export default dlearnService
