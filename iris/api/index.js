@@ -62,12 +62,14 @@ async function number(id){
         alert('결과: '+JSON.stringify(data))
     })
 }
-async function crawler(id){
-    fetch(`${server}/shop/crawler?id=${id}`)
+async function crawler(){
+    const res = await fetch(`${server}/shop/crawler`)
     .then(handleResponse)
-    .then(data => {
-        alert('결과: '+JSON.stringify(data))
-    })
+    .then(data => JSON.stringify(data))
+    .catch((error) => {
+        alert('error :::: '+error);
+    });
+    return Promise.resolve(res);
 }
 
 export default dlearnService

@@ -2,26 +2,33 @@ import { useState } from "react"
 import dlearnService from "../api"
 
 const NaverCrawler = () => {
-    const [inputs, setInputs] = useState({})
-    const {id} = inputs
-    const onChange = e => {
-      e.preventDefault()
-      const {value, name} = e.target
-      setInputs({...inputs, [name]: value})
-    }
+    const [inputs, setInputs] = useState()
+
     const onClick = e => {
         e.preventDefault()
-        dlearnService.crawler(id)
+        dlearnService.crawler().then(res => {
+          const json = JSON.parse(res)
+          setInputs(json['result'])
+        })
         let arr = document.getElementsByClassName('box')
         for(let i=0; i<arr.length; i++) arr[i].value = ""
     }
     return(<>
-    <form method="get">
     <h1>Naver Movie Crawler</h1>
-    <p>Please input movies rank that do you want to know.</p>
-    <input type="text" className="box" placeholder="rank" name="id" onChange={onChange}/>
+    <p>You can search movie chart with click find button.</p>
     <button onClick={onClick}>Find</button>
-    </form>
+    <table>
+      <teahd>
+        <tr>
+          <td>movie list</td>
+        </tr>
+      </teahd>
+      <tbody>
+        {inputs && inputs.map(({rank, title}) =>(
+          <tr key={rank}><td>{rank}</td>{title}<td></td></tr>
+        ))}
+      </tbody>
+    </table>
     </>)
 }
 export default NaverCrawler
