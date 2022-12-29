@@ -1,9 +1,12 @@
 import '../styles/Login.css'
 import { useState } from "react"
-import { blogLogin } from '../api'
-const Login = () => {
+import { userLogin } from '../api'
+import { useNavigate } from "react-router-dom"
+
+export default function LoginForm(){
     const [inputs, setInputs] = useState({})
-    const {email, password} = inputs;
+    const {username, password} = inputs;
+    const navigate = useNavigate()
 
     const onChange = e => {
         e.preventDefault()
@@ -12,13 +15,13 @@ const Login = () => {
     }
     const onClick = e => {
         e.preventDefault()
-        const request = {email, password}
+        const request = {username, password}
         alert(`사용자 이름: ${JSON.stringify(request)}`)
-        blogLogin(request)
+        userLogin(request)
         .then((res)=>{
-            alert(`Response is ${res.config.data}`)
-            console.log(`Response is ${res.config.data}`)
-            localStorage.setItem('token', JSON.stringify(res.config.data))
+            localStorage.setItem("loginUser", JSON.stringify(res.data))
+            alert(`Response is ${localStorage.getItem("loginUser")}`)
+            navigate("/home")
         })
         .catch((err)=>{
             console.log(err)
@@ -29,9 +32,10 @@ const Login = () => {
 
     return (
     <>
-        EMAIL: <input type="text" name="email" onChange={onChange} /><br/>
+        USERNAME: <input type="text" name="username" onChange={onChange} /><br/>
         PASSWORD: <input type="text" name="password" onChange={onChange} /><br/>
-        <button onClick={onClick}> 로그인 </button>    
+        <button onClick={onClick}> 로그인 </button>
+
+    
     </>
 )}
-export default Login
