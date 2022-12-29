@@ -18,14 +18,14 @@ const NaverCrawler = () => {
     <p>You can search movie chart with click find button.</p>
     <button onClick={onClick}>Find</button>
     <table>
-      <teahd>
+      <thead>
         <tr>
-          <td>movie list</td>
+        <td>No.</td><td>movie</td>
         </tr>
-      </teahd>
+      </thead>
       <tbody>
         {inputs && inputs.map(({rank, title}) =>(
-          <tr key={rank}><td>{rank}</td>{title}<td></td></tr>
+          <tr key={rank}><td>{rank}</td><td>{title}</td></tr>
         ))}
       </tbody>
     </table>

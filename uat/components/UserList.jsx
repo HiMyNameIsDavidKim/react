@@ -1,22 +1,36 @@
-import { useState } from "react"
-import uatService from "../api"
+import { useEffect, useState } from "react"
+import axios from "axios"
 
-const UserList = () => {
-    const [inputs, setInputs] = useState()
-
-    const onClick = e => {
-        e.preventDefault()
-        uatService.userList().then(res => {
-          const json = JSON.parse(res)
-          setInputs(json['result'])
+export default function UserList(){
+    const [list, setList] = useState([])
+    useEffect(() => {
+        axios
+        .get(`http://127.0.0.1:8000/users/user-list`)
+        .then(res => {
+            console.log("user list is uploaded.")
+            console.log(res.data)
+            setList(res.data)
         })
-        let arr = document.getElementsByClassName('box')
-        for(let i=0; i<arr.length; i++) arr[i].value = ""
-    }
+        .catch(err => {
+            console.log(err)
+        })
+    }, [])
+    
     return(<>
-    <h1>ckeck user list</h1>
-    <button onClick={onClick}>Find</button>
-    </>)
+        <h1>User List</h1>
+        <table>
+          <thead>
+            <tr>
+              <td>username</td><td>password</td><td>created_at</td><td>rank</td><td>point</td>
+            </tr>
+          </thead>
+          <tbody>
+            {list && list.map(({username, password, created_at, rank, point}) =>(
+                <tr key={username}>
+                <td>{username}</td><td>{password}</td><td>{created_at}</td><td>{rank}</td><td>{point}</td>
+                </tr>
+            ))}
+          </tbody>
+        </table>
+        </>)
 }
-
-export default UserList
