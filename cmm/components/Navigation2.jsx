@@ -10,8 +10,7 @@ import { Link } from "react-router-dom"
 const Navigation2 = () => {
   const [value, setValue] = React.useState(0);
 
-  return (
-    <Box sx={{ width: 500 }}>
+  return (<>
       <BottomNavigation
         showLabels
         value={value}
@@ -19,18 +18,22 @@ const Navigation2 = () => {
           setValue(newValue);
         }}
       >
-        <Link to="/home" style={{width:50, margin:10}}>Home</Link>
-        <Link to="/counter" style={{width:50, margin:10}}>Counter</Link>
-        <Link to="/todos" style={{width:50, margin:10}}>Todos</Link>
-        <Link to="/signup" style={{width:60, margin:10}}>Sign UP</Link>
-        <Link to="/login" style={{width:50, margin:10}}>Login</Link>
-        <Link to="/iris" style={{width:50, margin:10}}>Iris</Link>
-        <Link to="/fashion" style={{width:50, margin:10}}>Fashion</Link>
-        <Link to="/number" style={{width:50, margin:10}}>Number</Link>
-        <Link to="/crawler" style={{width:50, margin:10}}>Crawler</Link>
-        <Link to="/user-list" style={{width:50, margin:10}}>User list</Link>
+        <table>
+            <tr>
+              <td><Link to="/home" style={{width:40, margin:10}}>Home</Link></td>
+              <td><Link to="/counter" style={{width:40, margin:10}}>Counter</Link></td>
+              <td><Link to="/todos" style={{width:40, margin:10}}>Todos</Link></td>
+              <td><Link to="/signup" style={{width:40, margin:10}}>SignUP</Link></td>
+              <td><Link to="/login" style={{width:40, margin:10}}>Login</Link></td>
+              <td><Link to="/iris" style={{width:40, margin:10}}>Iris</Link></td>
+              <td><Link to="/fashion" style={{width:40, margin:10}}>Fashion</Link></td>
+              <td><Link to="/number" style={{width:40, margin:10}}>Number</Link></td>
+              <td><Link to="/crawler" style={{width:40, margin:10}}>Crawler</Link></td>
+              <td><Link to="/user-list" style={{width:40, margin:10}}>Userlist</Link></td>
+            </tr>
+        </table>
       </BottomNavigation>
-    </Box>
+  </>
   );
 }
 
