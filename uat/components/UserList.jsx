@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import "uat/styles/UserList.css"
+
 
 export default function UserList(){
     const [list, setList] = useState([])
@@ -18,16 +20,16 @@ export default function UserList(){
     
     return(<>
         <h1>User List</h1>
-        <table>
+        <table className='user-list'>
           <thead>
             <tr>
-              <td>username</td><td>password</td><td>created_at</td><td>rank</td><td>point</td>
+                <td>id</td><td>username</td><td>password</td><td>created_at</td><td>rank</td><td>point</td>
             </tr>
           </thead>
           <tbody>
-            {list && list.map(({username, password, created_at, rank, point}) =>(
-                <tr key={username}>
-                <td>{username}</td><td>{password}</td><td>{created_at}</td><td>{rank}</td><td>{point}</td>
+            {list && list.map(({id, username, password, created_at, rank, point}) =>(
+                <tr key={id} >
+                <td >{id}</td><td>{username}</td><td>{password}</td><td>{created_at}</td><td>{rank}</td><td>{point}</td>
                 </tr>
             ))}
           </tbody>

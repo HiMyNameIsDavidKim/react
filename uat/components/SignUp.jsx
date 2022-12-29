@@ -1,5 +1,3 @@
-import '../styles/SignUp.css'
-
 const SignUp = () => {
     const onClick = e => {
         e.preventDefault()
