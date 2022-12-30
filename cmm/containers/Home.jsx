@@ -11,9 +11,9 @@ import NaverCrawler from "iris/components/NaverCrawler"
 const Home = () => {
     const imageSize = {width: 700, height: 500}
     return (<>
-    <table style={{ width: "1200px", height: "550px", margin: "0 auto", border: "1px solid black" }}>
+    <table style={{ width: "650px", height: "550px", margin: "0 auto", border: "1px solid black" }}>
         <thead>
-            <tr style={{ height: "100px",  border: "1px solid black" }}>
+            <tr style={{ height: "150px",  border: "1px solid black" }}>
                 <td style={{ width: "100%", border: "1px solid black" }}>
                     <Navigation2/>
                 </td>

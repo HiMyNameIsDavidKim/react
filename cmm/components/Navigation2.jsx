@@ -25,6 +25,8 @@ const Navigation2 = () => {
               <td><Link to="/todos" style={{width:40, margin:10}}>Todos</Link></td>
               <td><Link to="/signup" style={{width:40, margin:10}}>SignUP</Link></td>
               <td><Link to="/login" style={{width:40, margin:10}}>Login</Link></td>
+            </tr>
+            <tr>
               <td><Link to="/iris" style={{width:40, margin:10}}>Iris</Link></td>
               <td><Link to="/fashion" style={{width:40, margin:10}}>Fashion</Link></td>
               <td><Link to="/number" style={{width:40, margin:10}}>Number</Link></td>

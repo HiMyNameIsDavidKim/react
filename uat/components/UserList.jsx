@@ -7,7 +7,7 @@ export default function UserList(){
     const [list, setList] = useState([])
     useEffect(() => {
         axios
-        .get(`http://127.0.0.1:8000/users/user-list`)
+        .get(`http://127.0.0.1:8000/users/list`)
         .then(res => {
             console.log("user list is uploaded.")
             console.log(res.data)
