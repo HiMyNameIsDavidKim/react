@@ -33,6 +33,9 @@ const Navigation2 = () => {
               <td><Link to="/crawler" style={{width:40, margin:10}}>Crawler</Link></td>
               <td><Link to="/user-list" style={{width:40, margin:10}}>Userlist</Link></td>
             </tr>
+            <tr>
+              <td><Link to="/stock" style={{width:40, margin:10}}>Stock</Link></td>
+            </tr>
         </table>
       </BottomNavigation>
   </>

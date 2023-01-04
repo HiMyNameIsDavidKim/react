@@ -6,6 +6,7 @@ import {Iris} from "iris"
 import image from '../../images/fashion.png'
 import Fashion from "iris/components/Fashion"
 import Number from "iris/components/Number"
+import Stock from "iris/components/Stock"
 import NaverCrawler from "iris/components/NaverCrawler"
 
 const Home = () => {
@@ -13,7 +14,7 @@ const Home = () => {
     return (<>
     <table style={{ width: "650px", height: "550px", margin: "0 auto", border: "1px solid black" }}>
         <thead>
-            <tr style={{ height: "150px",  border: "1px solid black" }}>
+            <tr style={{ height: "200px",  border: "1px solid black" }}>
                 <td style={{ width: "100%", border: "1px solid black" }}>
                     <Navigation2/>
                 </td>
@@ -33,6 +34,7 @@ const Home = () => {
                 <Route path="/number" element={<Number/>}></Route>
                 <Route path="/crawler" element={<NaverCrawler/>}></Route>
                 <Route path="/user-list" element={<UserList/>}></Route>
+                <Route path="/stock" element={<Stock/>}></Route>
             </Routes>
             </td>
         </tr>
